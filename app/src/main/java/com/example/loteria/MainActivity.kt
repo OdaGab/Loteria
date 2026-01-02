@@ -5,10 +5,12 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.util.Random
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +30,29 @@ class MainActivity : AppCompatActivity() {
 
         //Entendendo o evendo setInClickListener
         btnGerador.setOnClickListener{
-            Log.i("Teste", "Botao clicado viu Johann eu sei aonde voce mora")
-        }
+            val qtd = editText.text.toString()
 
+            if (qtd.isEmpty()){
+                Toast.makeText(this, "Informe um número entre 6 e 15", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val qtdInt = qtd.toInt()
+
+            if (qtdInt < 6 || qtdInt > 15){
+                Toast.makeText(this, "Informe um número entre 6 e 15", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val numbers = mutableSetOf<Int>()
+            val random = Random()
+
+            while(numbers.size < qtdInt){
+                val number = random.nextInt(60) + 1
+                numbers.add(number)
+            }
+
+            textResultado.text = numbers.sorted().joinToString(" - ")
+        }
     }
 }
