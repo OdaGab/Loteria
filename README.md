@@ -26,7 +26,8 @@
 
 <h2>📱 Screenshot</h2>
 <p>
-  <em>(Área reservada para você adicionar um print da tela do seu aplicativo)</em>
+  <em><img width="370" height="878" alt="image" src="https://github.com/user-attachments/assets/c1efd2af-8ae4-4727-b115-dc31e433fe84" />
+</em>
 </p>
 <br>
 <hr>
