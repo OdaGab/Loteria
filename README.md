@@ -32,5 +32,5 @@
 <br>
 <hr>
 <p align="center">
-  Desenvolvido por você!
+  Desenvolvido para fins didáticos!
 </p>
